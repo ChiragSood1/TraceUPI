@@ -1,12 +1,23 @@
 import { Routes, Route } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import { ToastProvider } from './components/Toast';
+import Dashboard from './pages/Dashboard';
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-[#030712]">
-      <main className="py-8 px-10 min-h-screen">
-        <h1 className="text-white text-2xl font-bold">TraceUPI</h1>
-        <p className="text-gray-400 mt-2">UPI Transaction Failure Tracker</p>
-      </main>
-    </div>
+    <ToastProvider>
+      <div className="relative min-h-screen bg-dark-950">
+        {/* Ambient background orbs */}
+        <div className="fixed top-0 right-0 w-[600px] h-[600px] bg-accent/[0.03] rounded-full blur-[150px] pointer-events-none"></div>
+        <div className="fixed bottom-0 left-1/3 w-[500px] h-[500px] bg-cyan/[0.02] rounded-full blur-[120px] pointer-events-none"></div>
+
+        <Sidebar />
+        <main className="relative z-10 ml-[260px] py-8 px-10 min-h-screen overflow-hidden">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+          </Routes>
+        </main>
+      </div>
+    </ToastProvider>
   );
 }
