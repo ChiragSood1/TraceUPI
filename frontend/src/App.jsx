@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import { ToastProvider } from './components/Toast';
 import Dashboard from './pages/Dashboard';
+import Transactions from './pages/Transactions';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <main className="relative z-10 ml-[260px] py-8 px-10 min-h-screen overflow-hidden">
           <Routes>
             <Route path="/" element={<Dashboard />} />
+            <Route path="/transactions" element={<Transactions />} />
           </Routes>
         </main>
       </div>
