@@ -3,6 +3,8 @@ import Sidebar from './components/Sidebar';
 import { ToastProvider } from './components/Toast';
 import Dashboard from './pages/Dashboard';
 import Transactions from './pages/Transactions';
+import TransactionDetail from './pages/TransactionDetail';
+import Notifications from './pages/Notifications';
 
 export default function App() {
   return (
@@ -17,6 +19,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/transactions" element={<Transactions />} />
+            <Route path="/transactions/:id" element={<TransactionDetail />} />
+            <Route path="/notifications" element={<Notifications />} />
           </Routes>
         </main>
       </div>
